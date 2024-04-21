@@ -12,7 +12,7 @@ const FeedPosts = () => {
     },[])
   return (
     <Container maxW={"container.sm"} py={10} px={2}>
-        {true && [0,1,2,3,4].map((_,idx)=>{
+        {isLoading && [0,1,2,3,4].map((_,idx)=>(
             <VStack key={idx} gap={4} alignItems={'flex-start'} mb={10}>
                 <Flex gap={2}>
                     <SkeletonCircle size={10}/>
@@ -27,8 +27,8 @@ const FeedPosts = () => {
                     </Box>
                 </Skeleton>
             </VStack>
-        })}
-        {!false && (
+            ))}
+        {!isLoading && (
             <>
             <FeedPost img='/img1.png' username='artist_1' avatar='/img1.png'/>
             <FeedPost img='/img2.png' username='artist_2' avatar='/img2.png'/>
