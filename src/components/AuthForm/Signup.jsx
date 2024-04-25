@@ -3,7 +3,7 @@ import { Alert, AlertIcon, Button, Input, InputGroup, InputRightElement } from '
 import React, { useState } from 'react'
 import useSignUp from '../../hooks/useSignUp'
 
-const SignUp = () => {
+const Signup = () => {
      
     const [inputs,setInputs]=useState({
         fullName:'',
@@ -76,4 +76,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Signup
