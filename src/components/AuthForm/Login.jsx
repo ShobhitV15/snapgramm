@@ -6,6 +6,7 @@ const Login = () => {
         email:'',
         password:'',
     })
+    const {loading,error,login}=useLogin()
   return (
     <>
             <Input placeholder='Email' type='email' fontSize={14}
@@ -18,7 +19,7 @@ const Login = () => {
             value={inputs.password}
             onChange={(e)=>setInputs({...inputs,password : e.target.value})}/>
 
-                <Button w={"full"} colorScheme='blue' size={"sm"} fontSize={14} >
+                <Button w={"full"} colorScheme='blue' size={"sm"} fontSize={14} onClick={()=>login(inputs)} >
                     Log In
                 </Button>
 
