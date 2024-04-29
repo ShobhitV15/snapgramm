@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box , Button, Flex, Tooltip} from "@chakra-ui/react"
+import {Box , Button, Flex, Image, Tooltip} from "@chakra-ui/react"
 import { Link } from '@chakra-ui/react'
 import {Link as RouterLink} from 'react-router-dom'
 import {  InstagramLogo , InstagramMobileLogo } from '../../assets/constants'
@@ -30,7 +30,7 @@ const Sidebar = () => {
                                                                     {/**We did this so that
                                                                     we can style our Link component 
                                                                     to use proprty of route 'to'    */}
-            <InstagramLogo/>
+            <Image src='/logo.png' h={24} cursor={"pointer"} alt="Instagram logo"/>
 
 
 
@@ -44,7 +44,7 @@ const Sidebar = () => {
             w={10}
              cursor="pointer" > 
                                     
-            <InstagramMobileLogo/>
+            
             </Link>
 
 
