@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import { Flex, Avatar,Button, VStack, Box} from '@chakra-ui/react'
-import useFollowUser from '../../hooks/useFollowUser';
-import useAuthStore from '../../store/authStore';
+import { Avatar, Box, Button, Flex, VStack } from "@chakra-ui/react";
+import useFollowUser from "../../hooks/useFollowUser";
+import useAuthStore from "../../store/authStore";
+import { Link } from "react-router-dom";
 
-const SuggestedUser = ({user,setUser}) => {
-    const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(user.uid);
+const SuggestedUser = ({ user, setUser }) => {
+	const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(user.uid);
 	const authUser = useAuthStore((state) => state.user);
-    const onFollowUser = async () => {
+
+	const onFollowUser = async () => {
 		await handleFollowUser();
 		setUser({
 			...user,
@@ -15,24 +16,25 @@ const SuggestedUser = ({user,setUser}) => {
 				: [...user.followers, authUser],
 		});
 	};
-  return (
-    <Flex justifyContent={"space-between"} alignItems={'center'} w={'full'}>
-        <Flex alignItems={'center'} gap={4}>
-            <Avatar src={user.profilePicURL} size={'md'}>
 
-            </Avatar>
-            <VStack spacing={2} alignItems={'flex-start'}> 
-            <Box fontSize={12} fontWeight={'bold'}>{user.fullName}
-            </Box>
-
-            <Box fontSize={12} color={'gray.500'}>
-                {user.followers.length} followers
-            </Box>
-
-
-            </VStack>
-        </Flex>
-        {authUser.uid !== user.uid && (
+	return (
+		<Flex justifyContent={"space-between"} alignItems={"center"} w={"full"}>
+			<Flex alignItems={"center"} gap={2}>
+				<Link to={`/${user.username}`}>
+					<Avatar src={user.profilePicURL} size={"md"} />
+				</Link>
+				<VStack spacing={2} alignItems={"flex-start"}>
+					<Link to={`/${user.username}`}>
+						<Box fontSize={12} fontWeight={"bold"}>
+							{user.fullName}
+						</Box>
+					</Link>
+					<Box fontSize={11} color={"gray.500"}>
+						{user.followers.length} followers
+					</Box>
+				</VStack>
+			</Flex>
+			{authUser.uid !== user.uid && (
 				<Button
 					fontSize={13}
 					bg={"transparent"}
@@ -48,10 +50,8 @@ const SuggestedUser = ({user,setUser}) => {
 					{isFollowing ? "Unfollow" : "Follow"}
 				</Button>
 			)}
-		
+		</Flex>
+	);
+};
 
-    </Flex>
-  )
-}
-
-export default SuggestedUser
+export default SuggestedUser;
