@@ -17,9 +17,6 @@ const SuggestedUsers = () => {
 					<Text fontSize={12} fontWeight={"bold"} color={"gray.500"}>
 						Suggested for you
 					</Text>
-					<Text fontSize={12} fontWeight={"bold"} _hover={{ color: "gray.400" }} cursor={"pointer"}>
-						See All
-					</Text>
 				</Flex>
 			)}
 

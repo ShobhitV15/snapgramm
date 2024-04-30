@@ -1,11 +1,11 @@
 import { Box, Flex, Tooltip } from "@chakra-ui/react";
 import { NotificationsLogo } from "../../assets/constants";
 
-const Notifications = () => {
+const Chat = () => {
 	return (
 		<Tooltip
 			hasArrow
-			label={"Notifications"}
+			label={"Chat"}
 			placement='right'
 			ml={1}
 			openDelay={500}
@@ -21,10 +21,10 @@ const Notifications = () => {
 				justifyContent={{ base: "center", md: "flex-start" }}
 			>
 				<NotificationsLogo />
-				<Box display={{ base: "none", md: "block" }}>Notifications</Box>
+				<Box display={{ base: "none", md: "block" }}>Chat</Box>
 			</Flex>
 		</Tooltip>
 	);
 };
 
-export default Notifications;
+export default Chat;
