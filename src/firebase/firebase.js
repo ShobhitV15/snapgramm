@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
+import { getPerformance } from "firebase/performance";
 import { initializeApp } from "firebase/app";
 
 import { getAuth } from "firebase/auth";
-import { Firestore, getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 
@@ -23,6 +24,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const perf = getPerformance(app);
 
 const auth=getAuth(app);
 const firestore=getFirestore(app);

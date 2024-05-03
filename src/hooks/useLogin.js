@@ -30,7 +30,6 @@ const useLogin = () => {
         const docSnap=await getDoc(docRef)
         localStorage.setItem('user-info',JSON.stringify(docSnap.data()))
         loginUser(docSnap.data())
-        
         console.log("Login successfully")
         
     } catch (error) {
