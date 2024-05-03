@@ -10,3 +10,5 @@ Currently, two official plugins are available:
 
 
 Canva Presentation:-(https://www.canva.com/design/DAGEM3_gS3k/8qJry7YwWOKMhitAtmikWw/view?utm_content=DAGEM3_gS3k&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+
+Deployed Application:-https://snapgram-fawn-psi.vercel.app/auth
